@@ -6,8 +6,8 @@ class ArrayMap extends Phaser.Scene {
     preload() {
         // get assets
         this.load.path = "./assets/"
-        this.load.image("smb_tiles", "smb_tiles_simple.png")
-        this.load.image("1bit_tiles_mono", "monochrome_packed.png")
+        this.load.image("mapPack", "mapPack_tilesheet.png")
+        //this.load.image("1bit_tiles_mono", "monochrome_packed.png")
     }
 
     create() {
@@ -39,13 +39,13 @@ class ArrayMap extends Phaser.Scene {
         // https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectCreator.html#tilemap
         const map = this.make.tilemap({
             data: level01,      // load direct from array
-            tileWidth: 16,
-            tileHeight: 16
+            tileWidth: 64,
+            tileHeight: 64
         })
         // add tileset to tilemap
         // addTilesetImage(tilesetName [, key] [, tileWidth] [, tileHeight] [, tileMargin] [, tileSpacing] [, gid])
         // try changing the tilesheet key in the next line to see another tileset uses the same indices
-        const tilesheet = map.addTilesetImage("smb_tiles")
+        const tilesheet = map.addTilesetImage("mapPack")
         
         // create layer in tilemap
         // createLayer(layerID, tileset [, x] [, y])
