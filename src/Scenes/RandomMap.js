@@ -59,6 +59,7 @@ class RandomMap extends Phaser.Scene {
     }
 
     create() {
+        noise.seed(Math.random());  // Seed set once
         this.generateMap();  // Initial map generation
 
         // Key bindings for shrinking and growing the sample window
