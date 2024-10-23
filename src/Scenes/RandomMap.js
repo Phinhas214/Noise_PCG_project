@@ -74,6 +74,7 @@ class RandomMap extends Phaser.Scene {
 
     update() {
         if (Phaser.Input.Keyboard.JustDown(this.reload)) {
+            console.log("restart scene");
             this.scene.restart();
         }
         if (Phaser.Input.Keyboard.JustDown(this.swap)) {
